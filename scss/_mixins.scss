@@ -38,6 +38,6 @@ $maxWidth: 1800;
   &:hover,
   &:focus,
   &:active {
-    @content;
+    color: $secondary-color;
   }
 }
