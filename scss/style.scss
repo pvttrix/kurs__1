@@ -5,14 +5,17 @@
 * {
   box-sizing: border-box;
 }
+
 html,
 body {
   height: 100%;
 }
+
 html {
   font: 10px $body-ff;
   scroll-behavior: smooth;
 }
+
 body {
   @include font($body-ff, 1.4rem, $fc: $body-color, $lh: 1.7);
   padding: 0;
@@ -270,13 +273,13 @@ ul {
       align-items: center;
       justify-content: center;
       justify-items: center;
-      font-size: 40px;
+      font-size: 50px;
       line-height: 30px;
       @include tr;
       &.active {
         opacity: 1 !important;
         width: 200px;
-        height: 100vw;
+        height: 70vh;
       }
     }
   }
@@ -288,10 +291,11 @@ ul {
     }
   }
   &__link {
+    display: inline-block;
     font-family: $secondary-ff;
     color: $primary-color;
     text-transform: uppercase;
-    @include adaptiv-font(14, 10);
+    font-size: 16px;
     position: relative;
     cursor: pointer;
     &::after {
