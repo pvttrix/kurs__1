@@ -79,9 +79,9 @@ ul {
 
 .header {
   position: relative;
-  height: -moz-calc(100% - 80px);
-  height: -webkit-calc(100% - 80px);
-  height: calc(100% - 80px);
+  min-height: -moz-calc(100% - 80px);
+  min-height: -webkit-calc(100% - 80px);
+  min-height: calc(100% - 80px);
   @media screen and (max-width: 768px) {
     height: -moz-calc(100% - 45px);
     height: -webkit-calc(100% - 45px);
