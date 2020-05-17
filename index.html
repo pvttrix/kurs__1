@@ -19,14 +19,17 @@
     />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./css/style.css" />
-    <title>Document</title>
+
+    <title>Bhramaon</title>
   </head>
   <body>
     <header
       class="header"
       style="background-image: url('pictures/header.png');"
     >
-      <a href="" class="header__burger"><span></span></a>
+      <a href="#" class="header__burger" id="header__burger">
+        <span></span>
+      </a>
       <div class="container">
         <h1 class="header__title">
           Bhramaon <br />
@@ -50,7 +53,7 @@
           </form>
         </div>
         <div class="scroller">
-          <a href="#" class="scroller__link"
+          <a href="#section-first" class="scroller__link"
             >Scroll down <br /><i class="fas fa-chevron-down"></i
           ></a>
         </div>
@@ -63,120 +66,97 @@
           <a href="" class="navigation__logo-link">bhromaon</a>
           <ul class="navigation__list">
             <li class="navigation__item">
-              <a href="" class="navigation__link">Who we are</a>
+              <a href="#section-first" class="navigation__link">Who we are</a>
             </li>
             <li class="navigation__item">
-              <a href="" class="navigation__link">What we do</a>
+              <a href="#what-we-do" class="navigation__link">What we do</a>
             </li>
             <li class="navigation__item">
-              <a href="" class="navigation__link">Travel with us</a>
+              <a href="#travel" class="navigation__link">Travel with us</a>
             </li>
             <li class="navigation__item">
-              <a href="" class="navigation__link">Contact us</a>
+              <a href="#contacts" class="navigation__link">Contact us</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    <section
-      class="section section__first"
-      style="background-image: url(pictures/section_2.png);"
-    >
-      <div class="container">
-        <div class="row">
-          <div class="col--1-2">
-            <h2 class="section__title">Why choose us</h2>
-            <p class="section__text">
-              Tion and dislike men who are so beguiled and demoralized by desire
-              by the charms of pleasure of the moment, so blinded by desire,
-              that they cannot foresee
-            </p>
-            <p class="section__text">
-              Ddislike men who are so beguiled and demoralized by the charms of
-              pleasure of the moment, so blinded by desire, that.
-            </p>
-            <button class="btn">
-              explore places
-            </button>
-          </div>
-          <div class="col--1-2">
-            <div class="imgWrap">
-              <img
-                src="pictures/section_2__img1.png"
-                alt=""
-                class="imgWrap__img"
-              />
+    <main>
+      <section
+        class="section section__first"
+        id="section-first"
+        style="background-image: url(pictures/section_2.png);"
+      >
+        <div class="container">
+          <div class="row">
+            <div class="col--1-2">
+              <h2 class="section__title">Why choose us</h2>
+              <p class="section__text">
+                Tion and dislike men who are so beguiled and demoralized by
+                desire by the charms of pleasure of the moment, so blinded by
+                desire, that they cannot foresee
+              </p>
+              <p class="section__text">
+                Ddislike men who are so beguiled and demoralized by the charms
+                of pleasure of the moment, so blinded by desire, that.
+              </p>
+              <button class="btn">
+                explore places
+              </button>
             </div>
-            <div class="imgWrap imgWrap--right">
-              <img
-                src="pictures/section_2__img1.png"
-                alt=""
-                class="imgWrap__img"
-              />
+            <div class="col--1-2">
+              <div class="imgWrap">
+                <img
+                  src="pictures/section_2__img1.png"
+                  alt=""
+                  class="imgWrap__img"
+                />
+              </div>
+              <div class="imgWrap imgWrap--right">
+                <img
+                  src="pictures/section_2__img1.png"
+                  alt=""
+                  class="imgWrap__img"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div
+        id="what-we-do"
+        class="opportunities"
+        style="background-image: url(pictures/Shape1.png);"
+      >
+        <div class="container">
+          <div class="features">
+            <div class="feature">
+              <svg width="60px" height="60px" class="features__icon">
+                <use xlink:href="#search-places"></use>
+              </svg>
+              <h3 class="features__title">Search Places</h3>
+            </div>
+            <div class="feature">
+              <svg width="60px" height="61px" class="features__icon">
+                <use xlink:href="#select-places"></use>
+              </svg>
+              <h3 class="features__title">Select Places</h3>
+            </div>
+            <div class="feature">
+              <svg width="62px" height="59px" class="features__icon">
+                <use xlink:href="#enjoy"></use>
+              </svg>
+              <h3 class="features__title">Book & Enjoy</h3>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <div
-      class="opportunities"
-      style="background-image: url(pictures/Shape1.png);"
-    >
-      <div class="container">
-        <div class="features">
-          <div class="feature">
-            <svg width="60px" height="60px" class="features__icon">
-              <use xlink:href="#search-places"></use>
-            </svg>
-            <h3 class="features__title">Search Places</h3>
-          </div>
-          <div class="feature">
-            <svg width="60px" height="61px" class="features__icon">
-              <use xlink:href="#select-places"></use>
-            </svg>
-            <h3 class="features__title">Select Places</h3>
-          </div>
-          <div class="feature">
-            <svg width="62px" height="59px" class="features__icon">
-              <use xlink:href="#enjoy"></use>
-            </svg>
-            <h3 class="features__title">Book & Enjoy</h3>
-          </div>
-        </div>
-      </div>
-    </div>
-    <section
-      id="thirdSection"
-      class="section section__second"
-      style="background-image: url('pictures/section_3.png');"
-    >
-      <div class="container">
-        <div class="info-wrap">
-          <div class="info">
-            <span class="info__country">
-              Spain
-            </span>
-            <h3 class="info__title">
-              Grand Spain Madrid
-            </h3>
-            <p class="info__description">
-              But I must explain to you how all this mistaken idea of account to
-              denouncing pleasure and praising pain was account born and I
-              account will give you a complete account of the system
-            </p>
-
-            <a href="#" class="btn">explore places</a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section
-      id="thirdSection"
-      class="section section__fourth"
-      style="background-image: url('pictures/section_4.png');"
-    >
-      <div class="container">
-        <div class="row row--right">
+      <section
+        id="travel"
+        class="section section__second"
+        style="background-image: url('pictures/section_3.png');"
+      >
+        <div class="container">
           <div class="info-wrap">
             <div class="info">
               <span class="info__country">
@@ -195,35 +175,62 @@
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section
-      class="section section__fifth"
-      style="background-image: url(pictures/section_5.png);"
-    >
-      <div class="container">
-        <h3 class="section__title">What Our Tourist Say</h3>
-        <div class="quote">
-          <div class="quote__imgWrap">
-            <img src="pictures/bloq.png" alt="" class="quote__imgWrap-img" />
-          </div>
+      </section>
+      <section
+        class="section section__fourth"
+        style="background-image: url('pictures/section_4.png');"
+      >
+        <div class="container">
+          <div class="row row--right">
+            <div class="info-wrap">
+              <div class="info">
+                <span class="info__country">
+                  Spain
+                </span>
+                <h3 class="info__title">
+                  Grand Spain Madrid
+                </h3>
+                <p class="info__description">
+                  But I must explain to you how all this mistaken idea of
+                  account to denouncing pleasure and praising pain was account
+                  born and I account will give you a complete account of the
+                  system
+                </p>
 
-          <div class="quote__item">
-            <h3 class="quote__title">Sam Sumon</h3>
-            <p class="quote__text">
-              <i class="fas fa-quote-left"></i>
-              But I must explain to you how all this mistaken idea of account to
-              denouncinpleasure and praising pain But I must explain to you how
-              all this mistaken idea of account to nai denouncing pleasure and
-              praising pain was account born and I account will give you a
-              complete account of the system was account born and I account will
-              give you a nai the complete account of the system
-            </p>
+                <a href="#" class="btn">explore places</a>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-    <footer class="footer">
+      </section>
+      <section
+        class="section section__fifth"
+        style="background-image: url(pictures/section_5.png);"
+      >
+        <div class="container">
+          <h3 class="section__title">What Our Tourist Say</h3>
+          <div class="quote">
+            <div class="quote__imgWrap">
+              <img src="pictures/bloq.png" alt="" class="quote__imgWrap-img" />
+            </div>
+
+            <div class="quote__item">
+              <h3 class="quote__title">Sam Sumon</h3>
+              <p class="quote__text">
+                <i class="fas fa-quote-left"></i>
+                But I must explain to you how all this mistaken idea of account
+                to denouncinpleasure and praising pain But I must explain to you
+                how all this mistaken idea of account to nai denouncing pleasure
+                and praising pain was account born and I account will give you a
+                complete account of the system was account born and I account
+                will give you a nai the complete account of the system
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer" id="contacts">
       <div class="container">
         <div class="footer__nav">
           <a href="" class="footer__logo-link">Bhramaon</a>
@@ -297,5 +304,7 @@
         />
       </symbol>
     </svg>
+
+    <script src="js/burger.js"></script>
   </body>
 </html>

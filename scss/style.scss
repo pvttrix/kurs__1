@@ -11,6 +11,7 @@ body {
 }
 html {
   font: 10px $body-ff;
+  scroll-behavior: smooth;
 }
 body {
   @include font($body-ff, 1.4rem, $fc: $body-color, $lh: 1.7);
@@ -106,10 +107,26 @@ ul {
     @media screen and (max-width: 767px) {
       display: block;
       position: fixed;
+      z-index: 10000;
       right: 10px;
       top: 20px;
       width: 30px;
       height: 20px;
+      &.clicked {
+        &::before {
+          @include tr;
+          transform: rotate(45deg);
+          top: 9px;
+        }
+        &::after {
+          @include tr;
+          transform: rotate(-45deg);
+          bottom: 9px;
+        }
+        & span {
+          transform: scale(0);
+        }
+      }
     }
     &::before,
     &::after {
@@ -194,14 +211,16 @@ ul {
 
 //скролл
 .scroller {
-  @include posA(null, 50%);
+  margin-top: 50px;
   bottom: 20%;
+
   &__link {
     color: $primary-color;
     font-family: $body-ff;
     font-weight: 300;
     letter-spacing: 2px;
     font-size: 14px;
+    scroll-behavior: smooth;
     &:hover {
       color: $hover-color;
     }
@@ -235,13 +254,38 @@ ul {
   }
   &__list {
     display: flex;
-    @media screen and (max-width: 767px) {
-      display: none;
+    @media screen and (max-width: 768px) {
+      position: fixed;
+      opacity: 0;
+      right: 0px;
+      top: 0px;
+      margin: 0;
+      padding: 0;
+      width: 0;
+      height: 0;
+      z-index: 100;
+      background-color: $secondary-color;
+      flex-direction: column;
+      overflow: auto;
+      align-items: center;
+      justify-content: center;
+      justify-items: center;
+      font-size: 40px;
+      line-height: 30px;
+      @include tr;
+      &.active {
+        opacity: 1 !important;
+        width: 200px;
+        height: 100vw;
+      }
     }
   }
   &__item {
     display: inline-block;
     margin-right: 30px;
+    @media screen and (max-width: 768px) {
+      margin: 0;
+    }
   }
   &__link {
     font-family: $secondary-ff;
