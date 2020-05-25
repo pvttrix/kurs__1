@@ -22,6 +22,10 @@ body {
   background-color: $body-bg;
   margin: 0;
 }
+
+footer {
+  flex-shrink: 0;
+}
 .container {
   max-width: 1170px;
   width: 100%;
@@ -46,17 +50,20 @@ ul {
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
+
   &__title {
     @include adaptiv-font(36, 26);
     font-weight: 300;
-    white-space: nowrap;
-    font-family: $secondary-ff;
+    word-wrap: break-word;
+    font-family: $body-ff;
     line-height: normal;
   }
   &__text {
     font-family: $body-ff;
     font-size: 16px;
     font-weight: 300;
+    padding: 5px;
+    margin-left: 5px;
   }
   &__first {
     min-height: 100vh;
@@ -77,6 +84,25 @@ ul {
   }
 }
 
+.scrollUp {
+  display: none;
+  background-color: rgba($secondary-color, 0.4);
+  position: fixed;
+  right: 50px;
+  bottom: 30px;
+  width: 80px;
+  height: 80px;
+  font-size: 25px;
+  color: $primary-color;
+  border-radius: 50%;
+  & i {
+    @include posA;
+  }
+  @media screen and (max-width: 768px) {
+    width: 55px;
+    height: 55px;
+  }
+}
 .header {
   position: relative;
   min-height: -moz-calc(100% - 80px);
@@ -110,9 +136,9 @@ ul {
     @media screen and (max-width: 767px) {
       display: block;
       position: fixed;
-      z-index: 10000;
+      z-index: 150;
       right: 10px;
-      top: 20px;
+      top: 15px;
       width: 30px;
       height: 20px;
       &.clicked {
@@ -193,7 +219,7 @@ ul {
     display: flex;
     align-items: center;
     text-transform: uppercase;
-    font-family: $secondary-ff;
+    font-family: $body-ff;
     font-size: 1.4rem;
     cursor: pointer;
     border: none;
@@ -250,7 +276,7 @@ ul {
   &__logo-link {
     color: $primary-color;
     text-transform: uppercase;
-    @include adaptiv-font(24, 10);
+    @include adaptiv-font(24, 18);
     &:hover {
       color: $hover-color;
     }
@@ -278,8 +304,8 @@ ul {
       @include tr;
       &.active {
         opacity: 1 !important;
-        width: 200px;
-        height: 70vh;
+        width: 100%;
+        height: 100%;
       }
     }
   }
@@ -292,7 +318,7 @@ ul {
   }
   &__link {
     display: inline-block;
-    font-family: $secondary-ff;
+    font-family: $body-ff;
     color: $primary-color;
     text-transform: uppercase;
     font-size: 16px;
@@ -324,6 +350,10 @@ ul {
   }
   &--right {
     justify-content: flex-end;
+  }
+  &--center {
+    justify-content: center;
+    padding: 50px;
   }
 
   @media screen and (max-width: 1030px) {
@@ -367,7 +397,7 @@ ul {
 .btn {
   display: inline-block;
   padding: 20px 40px;
-  font-family: $secondary-ff;
+  font-family: $body-ff;
   text-transform: uppercase;
   background-color: $secondary-color;
   border: none;
@@ -399,7 +429,7 @@ ul {
   flex-wrap: wrap;
   color: #fff;
   &__title {
-    font-family: Aleo, serif;
+    font-family: $body-ff;
     @include adaptiv-font(36, 22);
   }
 }
@@ -424,7 +454,7 @@ ul {
   padding: 50px 30px;
   text-align: left;
   background-color: rgba(0, 0, 0, 0.85);
-  font-family: "Josefin Sans", sans-serif;
+
   &__country {
     font-size: 20px;
     font-weight: 300;
@@ -505,7 +535,6 @@ ul {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
     max-width: 190px;
     width: 100%;
   }
@@ -538,4 +567,185 @@ ul {
     @include hover();
   }
 }
-// info }}
+
+// <!----- About us ----->
+.section {
+  background-color: $secondary-color;
+  text-align: center;
+  &--gray {
+    background-color: #fbfbfb;
+    min-height: auto;
+    padding: 7em 0;
+  }
+
+  &--bg {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgba(240, 255, 255, 0.21);
+    color: $secondary-color;
+    min-height: auto;
+  }
+  &__title-info {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1;
+  }
+  &__subtitle {
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+  &__content {
+    padding: 60px 170px 30px;
+    border: $border-width solid $primary-color;
+    border-top: none;
+    position: relative;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      @include posA($top: 0, $left: 0, $delta_x: 0, $delta_y: 0);
+      width: 27%;
+      border-top: $border-width solid $primary-color;
+    }
+    &::after {
+      left: auto;
+      right: 0;
+    }
+    @media screen and (max-width: 768px) {
+      padding: 30px !important;
+    }
+  }
+  &__content > &__title {
+    position: absolute;
+    @include posA($top: 0);
+    margin: 0;
+    max-width: 44%;
+    max-height: 6.8rem;
+    overflow: hidden;
+  }
+  &--bg &__content {
+    border-color: $primary-color;
+    &::before,
+    &::after {
+      border-color: $primary-color;
+    }
+  }
+  .feature {
+    background-color: inherit;
+  }
+}
+
+.partners {
+  margin: 0 -10px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 1200px) {
+  .partners {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+
+.partner {
+  margin: 10px;
+}
+
+.menu {
+  width: 300px;
+  &__list {
+    color: $secondary-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  &__link {
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: $primary-color;
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}
+.modal__link {
+  cursor: pointer;
+}
+.modalWrap {
+  display: none;
+  z-index: 1000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.popup-close {
+  display: inline-block;
+  position: absolute;
+  top: 1px;
+  right: 5px;
+  cursor: pointer;
+  font-size: 35px;
+  color: $primary-color;
+  overflow: hidden;
+}
+.authorization {
+  z-index: 10000;
+  padding: 20px 15px 0;
+  text-align: center;
+  max-width: 450px;
+  width: 90%;
+  @include posA;
+  border-radius: 3px;
+  background-position: center;
+  background-size: cover;
+  min-height: 500px;
+  &__title {
+    font-size: 22px;
+    color: $body-color;
+    background-color: rgba($primary-color, 0.5);
+  }
+  &__input {
+    padding: 0 5px;
+    color: $secondary-color;
+    font-family: $body-ff;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    margin: 15px auto;
+    height: 60px;
+    max-width: 300px;
+    width: 100%;
+    border-radius: 4px;
+    &:hover,
+    &:focus {
+      box-shadow: 0 0 6px 3px rgba(58, 219, 253, 0.35);
+    }
+    &::placeholder {
+      text-align: center;
+    }
+    &--sub {
+      max-width: 200px;
+      width: 50%;
+      background-color: $secondary-color;
+      color: $primary-color;
+      &:hover {
+        background: $primary-color;
+        color: #3a7999;
+        box-shadow: inset 0 0 0 3px $secondary-color;
+        @include tr;
+        cursor: pointer;
+      }
+    }
+  }
+}

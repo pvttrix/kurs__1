@@ -1,0 +1,132 @@
+@import "normalize";
+@import "variables";
+@import "mixins";
+@import "style";
+
+.posts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  &--via-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+    padding: 10px;
+    @media screen and (min-width: 576px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (min-width: 992px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+.post {
+  $space: 25px;
+  // width: calc(100% / 3 - 20px);
+  // width: 360px;
+  height: 540px;
+  background-color: $primary-color;
+  margin: 10px;
+  flex: 0 1 360px;
+  position: relative;
+
+  &--lg {
+    @media screen and (min-width: 992px) {
+      flex-basis: 740px;
+    }
+  }
+  &__link {
+    height: 100%;
+    &:hover {
+      box-shadow: 0 24px 28px rgba(0, 0, 0, 0.55),
+        0 10px 10px rgba(0, 0, 0, 0.22);
+    }
+    display: block;
+    text-decoration: none;
+    padding: $space;
+    text-transform: uppercase;
+    .post--lg & {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+  }
+  &__author {
+    @include posA($top: null, $left: $space, $delta_x: 0, $delta_y: 0);
+    bottom: $space;
+    width: 55px;
+    height: 55px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: $border-width solid $primary-color;
+    margin: -1 * $border-width;
+
+    .post--lg & {
+      display: none;
+    }
+  }
+  &__author--img {
+    @include posA;
+    min-width: 100%;
+    min-height: 100%;
+  }
+  &__img-wrap {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+    margin: -1 * $space -1 * $space $space;
+    .post--lg & {
+      @include posA;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      &:after {
+        content: "";
+        @include posA;
+        min-width: 100%;
+        min-height: 100%;
+        background-image: linear-gradient(
+          to top,
+          $body-color,
+          rgba(0, 0, 0, 0) 60%
+        );
+      }
+    }
+  }
+
+  &__img {
+    @include posA;
+    min-width: 100%;
+    min-height: 100%;
+  }
+  &__time {
+    font-family: $body-ff;
+    color: $secondary-color;
+    font-weight: 600;
+    display: block;
+    margin-bottom: $space * 0.8;
+    height: 1.3rem * 1.4;
+    .post--lg & {
+      position: relative;
+    }
+  }
+  &__title {
+    font-family: $body-ff;
+    color: $body-color;
+    font-size: 2.2rem;
+    max-height: 200px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    .post--lg & {
+      position: relative;
+      z-index: 1;
+      color: $primary-color;
+      font-size: 3rem;
+      max-height: 168px;
+    }
+  }
+}
